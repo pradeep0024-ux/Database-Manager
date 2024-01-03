@@ -1,18 +1,84 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+  /* font-family: "Lato"; */
+}
+:root{
+  --primary:#56bff1;
+}
+.nav li a {
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+  font-family: cursive;
+  font-weight: 600;
+  font-size: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav li {
+  display: block;
+  padding: 6px;
+
+}
+.logo-style {
+  width: 43px;
+  float: left;
+  border-radius: 50%;
+  margin-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav {
+  padding: 7px;
+  margin: 0px;
+  background-color: var(--primary);
 }
+.header{
+  margin: 25px;
+}
+.background-style{
+  
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* background-image: url("../../assets/background-img/bg-1.jpg"); */
+    background-image: url("../src/assets/background-img/bg-1.jpg");
+    /* background-image: url("../src/assets/background-img/WhatsApp\ Image\ 2023-08-08\ at\ 14.06.34_bf2da0c5.jpg"); */
 
+    color: white;
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.form-container{
+  margin-left: 30%;
+  margin-top: 50px;
+}
+.label-style{
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.input-Style{
+  display: block;
+  margin-top: 8px;
+  margin-right: 25px;
+  padding: 7px;
+  width: 300px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+}
+.btn-style{
+  /* margin-left: 25px; */
+  padding: 7px;
+  width: 300px;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,11 +94,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbarmenu {
+  padding-right: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  font-family: cursive;
+  font-weight: 600;
 }
