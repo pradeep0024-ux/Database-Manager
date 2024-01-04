@@ -13,7 +13,6 @@ const navigate = useNavigate();
 const GetUserDetail = ()=>{
   navigate("/")
   alert("Submitted Successfully")
-  console.log("userDatial", name,fatherName,email,mob,gender )
 }
 
   return (

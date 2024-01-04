@@ -32,11 +32,6 @@ function Dashboard() {
             <h1 style={{ fontSize: "45px", fontWeight: "bold" }}>
               Come Learn and Grow With As!
             </h1>
-            {/* <p>
-              Buying eyer should leave you happy and good-looking, with money
-              in your pocket. Glasses, sunglasses, and contacts—we’ve got your
-              eyes covered.
-            </p> */}
           </div>
         </div>
       </div>
