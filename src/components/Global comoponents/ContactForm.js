@@ -10,7 +10,6 @@ const ContactForm = () => {
 
   function FormData(e)  {
     e.preventDefault()
-    console.log("this is the name value", name,email,mobile,course,address,question);
 
   };
   return (
