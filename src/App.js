@@ -1,23 +1,23 @@
 import "./App.css";
 import Dashboard from "./components/pages/Dashboard";
-import Login from "./components/pages/Login";
+import Login from "./components/pages/login/Login";
 import Navbar from "./components/pages/navbar";
 import Registration from "./components/pages/Registration";
 import PersonalDetails from "./components/pages/PersonalDetails";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./components/pages/Footer";
+import Footer from "./components/pages/footer/Footer";
 function App() {
   return (
     <div className="App">
-    <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/details" element={<PersonalDetails />} />
       </Routes>
-<Footer/>
+      <Footer />
     </div>
   );
 }

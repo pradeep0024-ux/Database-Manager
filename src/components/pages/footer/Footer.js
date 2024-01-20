@@ -1,9 +1,10 @@
 import React from "react";
-import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"; // Import social media icons
+import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import "./footer.css"
 
 function Footer() {
   return (
-      <div className=" bg-[#56bff1] text-white flex justify-center space-x-6 py-[15px]">
+      <div className=" bg-[#56bff1] text-white flex justify-center space-x-6 py-[15px] footer-style">
         <div className="flex justify-center space-x-6">
           <a
             href="https://twitter.com/example"
@@ -32,7 +33,7 @@ function Footer() {
 
         <div className="text-lg flex justify-center space-x-6">
           <p>Contact Us: kpradeep0024@gmail.com</p>
-          <p>Atraith Bazar,Bhudhanpur Road ,Azamgarh, UP</p>
+          <p>Atraith Bazar,Budhanpur Road ,Azamgarh, UP</p>
         </div>
         <div>
           <p>&copy; 2023 My Company. All Rights Reserved.</p>

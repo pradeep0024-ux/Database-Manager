@@ -3,7 +3,7 @@ import React from 'react'
 function PersonalDetails() {
   return (
     <div>
-      <h1> Welcome User</h1>
+      <h1> this is Personal Details</h1>
     </div>
   )
 }
