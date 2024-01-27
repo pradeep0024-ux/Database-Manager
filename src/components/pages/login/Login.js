@@ -5,29 +5,46 @@ import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import "./login.css"
 
 function Login() {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const GetUserDetail = () => {
-    navigate("/details");
+  const LoginDetails = async () => {
+    console.log("user details",email,password);
+
+    let result = await fetch('http://localhost:5000/login',{
+      method:"post",
+      body:JSON.stringify({email,password}),
+      headers:{
+        'Content-Type':'application/json'
+      }
+    })
+    let response = await result.json()
+    console.log(response,"login response api")
+    if(response.name){
+     localStorage.setItem('user',JSON.stringify(response))
+
+     navigate("/details");
+    }else{
+      alert("please enter correct password")
+    }
     // alert("login Successfully")
   };
 
   return (
     <div className="login-form-container">
-      <h2 className="header">Nice to Meet You Again :)</h2>
+      <h2 className="login-header">Nice to Meet You Again :)</h2>
 
-      <div className="input-container">
+      <div class="input-container">
         <div className="icon-style">
           <FontAwesomeIcon icon={faUser} className="icon" />
-          <label htmlFor="UserName" className="label">User Name</label>
+          <label htmlFor="UserName" className="label">Email </label>
         </div>
         <input
-          className="input-Style"
+          className="input-Style-login"
           type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter User Name"
         />
       </div>
@@ -38,14 +55,14 @@ function Login() {
           <label htmlFor="password" className="label">Password</label>
         </div>
         <input
-          className="input-Style"
+          className="input-Style-login"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter Your Password"
         />
       </div>
-      <button className="submit-btn-style" onClick={GetUserDetail}>
+      <button className="submit-btn-style" onClick={LoginDetails}>
         Submit
       </button>
     </div>

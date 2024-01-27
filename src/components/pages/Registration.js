@@ -1,25 +1,64 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useAsyncError, useNavigate } from "react-router-dom";
 
-function Registration () {
-  const[name, setName] = useState("");
-  const[fatherName, setFatherName] = useState("")
-  const[email, setEmail] = useState("")
-  const[mob, setMob] = useState()
-  const[gender, setGender] = useState()
-  const[time, setTime] = useState()
-const navigate = useNavigate();
+function Registration() {
+  const [name, setName] = useState("");
+  const [fatherName, setFatherName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mob, setMob] = useState();
+  const [gender, setGender] = useState();
+  const [time, setTime] = useState();
+  const [password, setPassword] = useState();
 
-const GetUserDetail = ()=>{
-  navigate("/")
-  alert("Submitted Successfully")
-}
+  const navigate = useNavigate();
+  useEffect(() => {
+    const auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/");
+    }
+  });
 
+  const GetUserDetail = async () => {
+    console.log("user data", name,
+    fatherName,
+    email,
+    password,
+    mob,
+    gender,
+    time, )
+    try {
+      let Data = await fetch("http://localhost:5000/register", {
+        method: "post",
+        body: JSON.stringify({
+          name,
+          fatherName,
+          email,
+          password,
+          mob,
+          gender,
+          time,
+        }),
+        headers: { "Content-type": "application/json" },
+      });
+
+      if (Data.ok) {
+        let response = await Data.json();
+        console.log(response);
+        localStorage.setItem("user", JSON.stringify(response));
+        navigate("/");
+      } else {
+        // Handle HTTP error status codes (e.g., 400, 500)
+
+        throw new Error(`HTTP error! status: ${Data.status}`);
+      }
+    } catch (error) {
+      console.log("data error", error);
+    }
+  };
   return (
     <div className="form-container">
       <h2 className="header">Let's Introduce</h2>
-
-      <div style={{marginBottom:"20px"}}>
+      <div style={{ marginBottom: "10px" }}>
         <label htmlFor="fullName">Full Name</label>
         <input
           className="input-Style"
@@ -30,7 +69,7 @@ const GetUserDetail = ()=>{
         />
       </div>
 
-      <div style={{marginBottom:"20px"}}>
+      <div style={{ marginBottom: "10px" }}>
         <label htmlFor="fatherName">Father Name</label>
         <input
           className="input-Style"
@@ -40,8 +79,28 @@ const GetUserDetail = ()=>{
           placeholder="Enter Father Name"
         />
       </div>
+      <div style={{ marginBottom: "10px" }}>
+        <label htmlFor="fatherName">Email</label>
+        <input
+          className="input-Style"
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter Father Name"
+        />
+      </div>
+      <div style={{ marginBottom: "10px" }}>
+        <label htmlFor="password">Set Password</label>
+        <input
+          className="input-Style"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter Your Password"
+        />
+      </div>
 
-      <div style={{marginBottom:"20px"}}>
+      <div style={{ marginBottom: "10px" }}>
         <label htmlFor="batchTiming">Batch Timing</label>
         <input
           className="input-Style"
@@ -52,7 +111,7 @@ const GetUserDetail = ()=>{
         />
       </div>
 
-      <div style={{marginBottom:"20px"}}>
+      <div style={{ marginBottom: "10px" }}>
         <label htmlFor="mobileNumber">Mobile Number</label>
         <input
           className="input-Style"
@@ -63,16 +122,15 @@ const GetUserDetail = ()=>{
         />
       </div>
 
-      <div style={{marginBottom:"20px"}}>
+      <div style={{ marginBottom: "10px" }}>
         <label htmlFor="gender">Gender</label>
-        <select className="input-Style" id="gender">
-          <option value="" disabled selected>
-            Select Gender
-          </option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
+        <input
+          className="input-Style"
+          type="text"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+          placeholder="Enter gender"
+        />
       </div>
 
       <button className="btn-style" type="submit" onClick={GetUserDetail}>
