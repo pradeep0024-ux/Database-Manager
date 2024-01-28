@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useAsyncError, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Registration() {
   const [name, setName] = useState("");
@@ -11,12 +11,12 @@ function Registration() {
   const [password, setPassword] = useState();
 
   const navigate = useNavigate();
-  useEffect(() => {
-    const auth = localStorage.getItem("user");
-    if (auth) {
-      navigate("/");
-    }
-  });
+  // useEffect(() => {
+  //   const auth = localStorage.getItem("user");
+  //   if (auth) {
+  //     navigate("/");
+  //   }
+  // });
 
   const GetUserDetail = async () => {
     console.log("user data", name,

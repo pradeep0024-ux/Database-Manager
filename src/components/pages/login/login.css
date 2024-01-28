@@ -1,18 +1,36 @@
+body {
+    /* background-image: url('../../../assets/background-img/WhatsApp Image 2023-08-08 at 14.06.34_bf2da0c5.jpg'); */
+    background-color: #c9e4f5 !important;
+    /* background-size: cover; */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .login-form-container {
-    max-width: 450px;
-    margin: 50px auto;
+    max-width: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .login-header {
     text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Change header color */
 }
 
 .input-container {
     margin-bottom: 20px;
+    
 }
 
 .icon-style,
@@ -31,24 +49,50 @@
     margin-top: 5px;
     margin-bottom: 10px;
     box-sizing: border-box;
-    border: 1px solid var(--primary);
+    border: 1px solid #ccc;
     border-radius: 8px;
 }
 
-.submit-btn-style {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.login-style,
+.register-style {
     width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.label {
-    margin-left: 10px;
+.login-style {
+    background-color: #3498db;
+    color: white;
 }
 
-.btn-style:hover {
-    background-color: #45a049;
+.login-style:hover {
+    background-color: #2980b9;
+}
+
+.register-style {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.register-style:hover {
+    background-color: #27ae60;
+}
+
+.forget-password-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forget-password-link:hover {
+    text-decoration: underline;
 }

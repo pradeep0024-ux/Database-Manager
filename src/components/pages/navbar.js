@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link ,useNavigate} from "react-router-dom";
-import Logo from "../../assets/Logo/logoBG.png";
+import Logo from "../../assets/Logo/New_logo.png";
 
 export default function Navbar() {
   const auth = localStorage.getItem("user");
@@ -23,7 +23,7 @@ const LogOut =() =>{
               <Link to="/details">Details</Link>
             </li>
             <li>
-              <Link onClick={LogOut} to="/register">LogOut</Link>
+              <Link onClick={LogOut} to="/login">LogOut</Link>
             </li>
           </>
         ) : (
