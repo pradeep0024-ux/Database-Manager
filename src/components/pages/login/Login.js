@@ -70,7 +70,7 @@ function Login() {
                         Login
                     </button>
                     <button className="register-style">
-                        <Link to="/register">Register</Link>
+                        <Link className="text-style" to="/register">New User ? Register</Link>
                     </button>
                 </div>
                 <Link to="#" className="forget-password-link">

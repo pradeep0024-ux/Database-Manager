@@ -10,10 +10,10 @@
 .nav li a {
   text-decoration: none;
   padding: 20px;
-  color: white;
+  color: #56bff1;
   font-family: cursive;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 .nav li {
@@ -22,16 +22,17 @@
 
 }
 .logo-style {
-  width: 43px;
-  float: left;
+  width: 199px;
+  height: 199px;
+  /* float: left;
   border-radius: 50%;
-  margin-left: 10px;
+  margin-left: 10px; */
 }
 
 .nav {
   padding: 7px;
   margin: 0px;
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
 }
 .header{
   margin: 25px;
