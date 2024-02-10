@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo/New_logo.png";
 
 export default function Navbar() {
   const auth = localStorage.getItem("user");
-const navigate = useNavigate()
-const LogOut =() =>{
-  localStorage.clear();
-  navigate('/register')
-}
+  const navigate = useNavigate();
+
+  const LogOut = () => {
+    localStorage.clear();
+    navigate('/register');
+  };
 
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "space-between"}}>
+      <img className="logo-style" src={Logo} alt="logo" />
       <ul className="nav">
-        <img className="logo-style" src={Logo} alt="logo" />
         {auth ? (
           <>
             <li>

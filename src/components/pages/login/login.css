@@ -1,11 +1,9 @@
-body {
-    /* background-image: url('../../../assets/background-img/WhatsApp Image 2023-08-08 at 14.06.34_bf2da0c5.jpg'); */
+/* body {
     background-color: #c9e4f5 !important;
-    /* background-size: cover; */
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-}
+} */
 
 .login-container {
     display: flex;

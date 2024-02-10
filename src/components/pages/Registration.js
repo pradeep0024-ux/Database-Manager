@@ -124,13 +124,18 @@ function Registration() {
 
       <div style={{ marginBottom: "10px" }}>
         <label htmlFor="gender">Gender</label>
-        <input
+        {/* <input
           className="input-Style"
           type="text"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
           placeholder="Enter gender"
-        />
+        /> */}
+        <select  value={gender} onChange={(e) => setGender(e.target.value)}>
+				<option  value="male">Male</option>
+				<option  value="female">Female</option>
+				<option  value="other">Other</option>
+			</select>
       </div>
 
       <button className="btn-style" type="submit" onClick={GetUserDetail}>
